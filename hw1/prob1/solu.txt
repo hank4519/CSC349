@@ -1,3 +1,13 @@
 
 
-Rank: 36 < log_b of n < 17n < 48 nlog_b of n < 367 n^2 log_b of n < n ^3 < 2 ^n < n! < n^n 
+Rank: (from fast to slow)
+
+36 
+log_b of n 
+17n 
+48 nlog_b of n 
+367 n^2 log_b of n 
+n ^3 
+2 ^n 
+n! 
+n^n 
