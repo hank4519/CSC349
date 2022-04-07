@@ -50,3 +50,6 @@ if __name__ == '__main__':
     lst = [3,5, 9, 1, 2, 3, 3, 7, 2]
     lst = mergeSort(lst) 
     print (lst)
+
+
+#This is a modi 
