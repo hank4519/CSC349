@@ -27,7 +27,8 @@ case 2: returns find_index(A, mid + 1, max),
 case 3: find value where A[mid] = mid, and mid + 1 is correctly returned (starting index of A is 1) 
 
 
+Conclusion: 
 
-
+T(n) = 1/2T(n) + O(1)
 
 
