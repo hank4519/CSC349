@@ -1,0 +1,33 @@
+Input: A list with potentially duplicated numbers 
+Output: A list that removed all the duplicated numbers 
+
+denote the size of A to be n 
+MergeSort(A)
+if n is less than or eqaul to 1: 
+  return A 
+else 
+  return Merge(MergeSort(A[0: n/2]) + MergeSort(A[n/2 + 1, n]) 
+  
+  
+Merge(lst1, lst2): 
+  if lst1 is empty 
+     return lst2
+  if lst2 is empty 
+      return lst1 
+  if lst1[0] < lst2[0] 
+      concate 
+  else if lst2[0] < lst1[0] 
+      concate
+  else 
+      return both increment the index 
+
+Lemma: A list with potentially duplicated numbers, MergeSort returns a list removed all the duplicated numhers 
+Proof: proceed with induction with the size of the interval under consideration 
+Base case: if either list1 is empty or list2 is empty, simply returns the other list 
+Inudctive Hypothesis: Suppose that, given two sorted list x and y, of total size h, Merge returns a sorted list 
+              containg all the elements from x and y 
+Inductive Step: consider two sorted list with total size of h + 1
+      In step 3 and 4 of the algorithm, Merge correctly places the smallest element at the begihning of the list 
+      Merge then concatenates that elemnet with the Merge of the remaning elements from the two lists. And also, 
+      if a duplicated value appeared, it was only appended once on the last else statement 
+Conclusion: Therefore, by proof of induction, the algorithm is correct. 
