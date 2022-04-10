@@ -1,0 +1,37 @@
+Input: A sorted list and a target number x 
+output: the number of occurrence of x in list A 
+
+find_first_occurrence(A, x, min, max) 
+  if min > max 
+    return -1
+  mid = (max + min) // 2 
+  if A[mid] < x 
+    return find_first_occurrence(A, x, mid + 1, max) 
+  else if A[mid] > x or (A[mid] == x and A[mid - 1] == x)
+    return find_first_occurrence(A, x, min, mid - 1) 
+  else 
+    return mid 
+    
+    
+find_last_occurrence(A, x, min, max) 
+  if A[mid] < x or (A[mid] == x and A[mid + 1] == x) 
+    return find_last_occurrence(A, x, mid + 1, max) 
+
+find_first_occurrence(A, x, min, max) 
+Lemma: A sorted list of n size, returns the first occurrence of x in the list 
+Proof: Proceed with induction with the size of the interval under consideration 
+Base case: min > max, this would only happen if the given value of x is not in the list
+Inductive Hypothesis: Suppose that given a list n, and an integer x, and x appears from index i to j, 
+                    the function returns the first occurrence of x in the list with is i 
+Inductive Step: 
+            in the hypothesis, x is in the list, which means we will not execute the base case 
+            case 1: mid point value is less that x, then we recurse right with return function(A,x, mid + 1, max) 
+            case 2: mid point value is greater than x, 
+                     or (if eqaul to x but not the first occurrence) mid is between i and j, we recurse left with function(A, x, min, mid - 1) 
+            case 3: find the first occurrence of the value 
+Conclusion: returns first occurrence .
+
+and the same goes for last occurrence. 
+number of occurrence = last - first + 1 
+
+Reuccrrence Relation: T(n) = T(n/2) + O(1) 
