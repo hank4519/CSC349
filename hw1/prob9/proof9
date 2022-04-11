@@ -1,0 +1,19 @@
+Input: list of prices 
+Output: max profit
+
+find_max_profit(A, min, max) 
+  if left == right then 
+    return 0
+   mid = (max + min) // 2 
+   left_min = min A[left, mid + 1]
+   right_max = max A[mid, right] 
+   cross = right_max - left_min 
+   left = recurseLeft() 
+    right = recurseRight() 
+     return max(left, right, cross) 
+     
+ Lemma
+ Proof 
+ Base case 
+ Inductive Hypothesis 
+ Inductive Step 
