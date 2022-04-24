@@ -1,0 +1,24 @@
+find_majority(A, min, max) 
+    if min == max: 
+      return min
+    left = () 
+    right = () 
+    if left == right
+      return right 
+    left_count = count(0, left, min, max) 
+    right_count = count(0, right, min, max) 
+    if left_count > right_count
+      return left 
+    else  
+       return right 
+       
+ Input: a list of number, and suppose there is a majority number
+ Output: majority number 
+ 
+ Lemma: if the occurrence of x in list A is more than n/2, where n is the size of the list, number x is returned 
+ Proof: proceed with induction with the size of the interval under consideration 
+ Base case: if min == max, returned the only number in the list
+ Inductive Hypothesis: Suppose the occurrence of x in A is > n/2, function returns 
+ Inductive Step: if left differs from right, we will do a count on both sides, and decide which is the majority 
+ 
+ Recurrenece Relation: T(n) = T(1/2) + O(n) 

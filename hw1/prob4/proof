@@ -1,0 +1,34 @@
+Input: A sorted list with distinctive values 
+Output: an index i where A[i] = i, -1 if no such element
+
+find_index(A, min, max)
+
+if min > max then
+  return -1 
+else
+  mid = (max + min) // 2 
+   if A[mid] > mid + 1 then
+       recurse find_index(A, min, mid - 1)
+   else if A[mid] < mid - 1 then 
+       recurse find_index (A, mid + 1, max) 
+   else 
+        return mid + 1 (because the starting i is 1) 
+        
+Proof: We will proceed by induction on the total size of n for list A 
+Lemma: sorted A with distinctive values, an element exists such that A[i] = A, returns index i.
+Base case: min > max, this will only occur if line 15 is not executed, meaning that there is no such as element in list A that satisfies A of i = i. 
+      In that case, it correctly return -1 
+      
+Inductive Hypothesis: suppose that given a sorted List a with total size of n, find_index returns the index i where A[i] = i, 0<= i <= n
+Inductive Step: suppose a sorted list with a total size of n + 1
+case 1: A[mid] is greater than mid + 1, find_index returns find_index(A, min, mid - 1) because index i can only exsit in the left part considering each 
+        value is distinctive in the list and the current mid point value is already greater than mid + 1. And 0 <= i <= n + 1
+case 2: returns find_index(A, mid + 1, max), 
+case 3: find value where A[mid] = mid, and mid + 1 is correctly returned (starting index of A is 1) 
+
+
+Conclusion: 
+
+T(n) = 1/2T(n) + O(1)
+
+

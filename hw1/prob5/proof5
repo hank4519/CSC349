@@ -1,0 +1,40 @@
+Input: A list of number representing the weight of marbles, with one and only one marble weighs heavier than the others, where n is equal to 3^n
+Output: the index of the heavy marble
+
+find_marble(A, min, max) 
+
+if max - min == 3 then 
+  heavy = scale(A[min], A[max]) 
+  if heavy == 0, then 
+      return A[min + 1] 
+  else 
+       return heavy 
+else 
+  split A into 3 sets 
+  l1 = A[min, n/3] 
+  l2 = A[n/3, n/2] 
+  l3 = A[n/2, max] 
+  heavy = scale (l1, l2) 
+  if(heavy=0) 
+    return find_marble(l3, ...) 
+  else 
+    if (heavy == 1): return (l1, min, min + length)
+    else: return (l2, ...) 
+    
+    
+
+Lemma: A list with size n where n equals to power of 3, returns the index of i where i is the heavy marble 
+Proof: proceed by induction of the size of the interval under consideration 
+Base Case: suppose max - min == 3, meaning we only have three elements left in the list, we can compare either two of them, if we get a zero, we return the 
+          third value. Else, depending on the returned value, return the corresponding elements
+Inductive Hypothesis: a list with a size of n, and n is equal to 3 to the power of k, and suppose find_marble returns the correct 
+            position of the heavy marble
+Inductive Step: Suppose a list containing a total size of 3 to the power of k + 1. 
+          Since the total size is 3 to the power of k + 1, and 3 to the power of 3 is greater than 3, it will skip the base case 
+          and under the else branch, it will split the list into three sublists, and compare two of them, if 0 is returned, recursive call on list 3 is made
+          else based on the returend value, if 1 recurse on list 1, -1 recurse on list2, either way. We reduced the size to our inductive hypothesis of a
+          total size of 3 to the power k. Thus, it will eventually return the correct index
+Conclusion: by the principle of mathematical induction, this algorithm works for list with one and only one heavy marble and a list size of power 3. 
+
+
+T(n) = 1/3T(n) + O(1)
