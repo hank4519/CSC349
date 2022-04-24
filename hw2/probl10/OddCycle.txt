@@ -1,0 +1,29 @@
+Input: A graph, and a starting vertex v 
+Output: an odd length cycle, or null if no such cycle 
+
+Explore(G, v) 
+    discovered (v) = True 
+    previsit(v) 
+    for all neighbors of v, u do 
+        if discovered(u) = false 
+            Explore(G, u) 
+        else if discovered(u) = True
+            if prev[u] < prev[v] and prev[v] - prev[u] % 2 == 0
+                return find_path(u, v) 
+    return null 
+
+find_path(u, v){ 
+    path =  []
+    find_path_helper(u, v, path)
+    return path
+}
+find_path_helper(start, end, path){ 
+    if start == end then 
+        return true 
+    explored(start) = true 
+    for all neighbors of start, u do: 
+        if explored(u) = false then 
+            if(find_path_helper(u, end, path)) then 
+                path.append(u) 
+    return false
+}
