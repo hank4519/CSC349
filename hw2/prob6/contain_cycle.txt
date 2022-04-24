@@ -1,0 +1,45 @@
+Input: undirected Graph, and an edge e = (u, v) 
+Output: true if G has a cycle containing e, false otherwise 
+
+contains_cycle(Graph, v, e)
+    parent[] 
+    Queue q = new Queue()
+    visited(v) = true
+    q.add(v) 
+    while q is not empty: 
+        curr = q.pop()
+        for all neighbors of curr, u: 
+            if u is not visited: 
+                visited[u] = true 
+                q.add(u) 
+                parent[u] = curr 
+            else if parent[u] != curr
+                if check_path(curr, u, e) is true 
+                    return true
+    return false 
+
+check_path(Graph, start, end, e){ 
+    cycle = []
+    visited = [] 
+    cycle =  find_path_helper(Graph, start, end, cycle, visited)
+    for edge in cycle: 
+        if edge == e :
+            return True
+    return False
+}
+
+find_path_helper(start, end, e, cycle, visited){ 
+    visited.add(start)
+    cycle.append(start) 
+    if start == end: 
+        return True
+    else: 
+        for neighbor in Graph[start]: 
+            if neighbor is not in visited:                  
+                if find_path_helper(neighbor, end, cycle, visited) is true::
+                    return cycle
+    cycle.pop()
+    visited.remove(start) 
+    return Flase
+
+}

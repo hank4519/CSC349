@@ -1,0 +1,40 @@
+
+Input: A graph, G = (V, E), and a vertex v belongs V
+Output: True if the graph is bipartie, False otherwise 
+
+explore(G, v)
+    discovered(v) = true 
+    previsit(v) 
+    for all neighbors of v, u do 
+        if discovered (u) == false then
+            if explore(G, u) is False: 
+                return false
+        else if discovered(u) == true then 
+            if (prev[v] - prev[u]) % 2 == 0: 
+                return false
+    return true 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Disgard: 
+    postvisit(v)
+
+check(G, v)
+    visited(v) = true
+    for all neighbors of v, u do 
+        if (prev[v] > prev[u] && (prev[v] - prev[u]) % 2 == 0) &&
+            (post[v] < post[u] && (post[u] - post[v]) % 2 == 0) 
+            return False
+        if visited(u) == false then 
+            check(G, u)
+    return true

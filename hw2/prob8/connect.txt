@@ -1,0 +1,4 @@
+In any connected undirected graph, there is a vertex whose removal leaves the graph connected.
+
+If we run depth first search, we will have a spanning tree, and remove the leaf of the tree will leave the 
+graph connected. 

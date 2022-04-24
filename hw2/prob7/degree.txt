@@ -1,0 +1,16 @@
+
+Prove: summation of degree(u) is 2|E|
+
+Proof by Contradiction: 
+    if we have summation of degree != 2|E| 
+    one node with a n edges, must have n + 1 or n - 1 degree 
+    but each edge is shared by two nodes and it's undirected, 
+    each node's degree will be exactly eqaul to the number of edges which is n, 
+    and that contradicts to the condition of having n + 1 or n - 1 degree
+
+Thus, summation of degree(u) for undirected graph is 2|E| 
+
+even number of vertices with odd degree is not necessarily true, consider a cycle with three nodes 
+each node has a degree of 2, but it doesn'r have an even number of vertices with odd degree
+
+Summation of degree(u) is 2|E| does not hold true for directed graph because indegree/outdegree != degree 

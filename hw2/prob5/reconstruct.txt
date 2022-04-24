@@ -1,0 +1,31 @@
+
+Input: Preorder and Postorder list of vertices 
+Output: A reconstructed graph of those vertices 
+
+PreProcess: set the prev and post value to each vertex 
+
+eg. 
+Pre: A B D E H L M I F C G J K N 
+Post: D L M H I E F B J N K G C A 
+
+prev[A] = 1, post[A] = 28 
+prev[E] = 4, post[E] = 28
+....
+
+
+reconstruct_graph(list, pre[], post[]): 
+    stack = new stack() 
+    clock = 0
+    curr = list[clock]
+    node = (pre[curr], post[curr])
+    stack.push(node) 
+    for (; clock < sizeof(pre); clock++){ 
+        curr = list[clock] 
+        new_node = (prv[curr], post[curr])
+        last_node = stack.peek() 
+        while (new_node.pre and new_node.post is not a subset of last_node)
+            stack.pop() 
+            last_node = stack.peek() 
+        build_edge(last_node, new_node)
+    }
+    return node
