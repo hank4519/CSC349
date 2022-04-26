@@ -1,3 +1,14 @@
+Prove the following theorem:
+In any connected undirected graph, there is a vertex whose removal leaves the graph connected.
+
+
+Suppose we have a connected undirected graph with n vertices. 
+If we perform a traversal on any vertex, it will give at least one leaf node. 
+And remove the leaf node does not affect the connectivity of other parts of the graph. 
+Thus, in any connected undirected graph, there is a vertex whose removal leaves the graph still connected. 
+
+
+
 In any connected undirected graph, there is a vertex whose removal leaves the graph connected.
 
 If we run depth first search, we will have a spanning tree, and remove the leaf of the tree will leave the 
