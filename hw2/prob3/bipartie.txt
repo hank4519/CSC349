@@ -2,21 +2,42 @@
 Input: A graph, G = (V, E), and a vertex v belongs V
 Output: True if the graph is bipartie, False otherwise 
 
-explore(G, v)
-    discovered(v) = true 
-    previsit(v) 
-    for all neighbors of v, u do 
-        if discovered (u) == false then
-            if explore(G, u) is False: 
-                return false
-        else if discovered(u) == true then 
-            if (prev[v] - prev[u]) % 2 == 0: 
-                return false
-    return true 
+3. Bipartite  
+
+is_bipartie (G, v)
+	discovered (v) = true 
+	previsit (v) 
+	for all neighbors of v, u do 
+		if discovered(u) = false
+			if is_bipartie(G, u) is  false 
+				Return false 
+		Else if discovered (u) = true 
+			if  (prev[v] - prev[u] ) % 2 == 0 then 
+				Return false
+
+	Return true 
 
 
+Proof: 
+	Is_bipartie is a modification based on the Explore(G,  v) and, Explore(G, v) is proved to be correct for traversing a graph. So all we have to prove is that if there exists a back edge where the difference of their pre order numbers is an even number, there exists an odd length of cycle. And an odd length of cycle makes a graph not bipartite 
+
+	If the difference of the absolute value of two pre ordered number is even, meaning that there must exists an even number of edges beteene these two nodes. An even number + the back edge gives us an odd length cycle 
+	
+By Contradiction: Assume that there exists an odd cycle length in a graph, and the graph is bipartiable, let’s take the simplest example, which is A -> B -> C - >A, where this is a cycle, and it contains three edges (odd) 
+
+Possible combination: 
+ (A, B) (C )  -> not bipartite, since A, B share a path
+( A, C) (B) - > not biparties 
+(B, C) (A)  -> not bipartite
+
+	Thus, it contradicts to our hypothesis that it is bipartiteable 
+	And the algorithm correctlky returns Flase in this case 
 
 
+A -> B -> C -> D -> A 
+
+(A, C, ) 
+(B, D) 
 
 
 
