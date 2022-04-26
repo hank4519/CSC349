@@ -1,10 +1,10 @@
-Input: A graph, and a starting vertex v 
+Input: A strongly connected directed graph, and a starting vertex v 
 Output: an odd length cycle, or null if no such cycle 
 
 Explore(G, v) 
     discovered (v) = True 
     previsit(v) 
-    for all neighbors of v, u do 
+    for all outgoing neighbors of v, u do 
         if discovered(u) = false 
             Explore(G, u) 
         else if discovered(u) = True
@@ -27,3 +27,6 @@ find_path_helper(start, end, path){
                 path.append(u) 
     return false
 }
+
+Proof: 
+    
