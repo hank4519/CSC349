@@ -1,0 +1,16 @@
+True or False? (Proof or counterexample) If a directed graph G = (V, E) is cyclic but can be made
+acyclic by removing one edge, then a depth-first search in G will encounter exactly one back edge.
+
+True 
+
+Suppose a direct graph G = (V,E) is cyclic and can be made acyclic by removing one edge, and a dfs encounter 
+more then one back edges 
+
+If we remove any edges other than back edges, the graph will still be cyclic
+If we remove one back edge, since we have more than one back edges, there will be at leaset one back edge
+    left in the graph 
+
+If there is a back edge, the graph will be cyclic, which contradicts to the hypothesis that the graph will become
+acyclic 
+
+Thus, a depth-first search in G will encounter exactly one back edge

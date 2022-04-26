@@ -1,0 +1,16 @@
+cyclic ->  one back edge -> remove an edge -> acyclic
+
+Proof by counter Example 
+
+Suppose a directed graph G(v,e), and DFS gives exactly one
+back edge, and by removing an edge, we will still have a cyclic
+graph
+
+further suppose the edge we are removing is the only back edge,
+it left us with a directed grpah with no back edges. And without
+backedges, the graph traversal is one directional and no cycles
+possible. Which is a contradiction to the hypothesis that we
+will still have a cyclic graph. 
+
+Thus,  then it is possible to choose an edge e ∈ E such that the graph
+without e (G′ = (V, E \{e})) is acyclic.

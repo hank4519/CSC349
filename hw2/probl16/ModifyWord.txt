@@ -1,0 +1,7 @@
+16. Suppose you are given a source word and a target word. Your goal is to transform the source word to
+the target word in as few valid steps as possible. The valid steps are change one character of the word
+to a new character, add one character to the word, or remove one character from the word. After each step, the resulting string must be a valid word. For example, we could transform cat to hut in two
+steps:
+cat → hat → hut
+
+

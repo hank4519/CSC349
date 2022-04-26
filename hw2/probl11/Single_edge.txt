@@ -1,0 +1,21 @@
+Is it always possible to make an undirected graph with two connected components connected by adding
+a single edge?
+• Why or why not? (Proof or counterexample)
+• Does the same hold true for directed graphs (and strongly connected components rather than
+connected components)? (Proof or counterexample)
+
+connected components -> for each u, v, there exists a path in G from u to v 
+
+Direct Proof: 
+    connected components mean that for each u, v, there exists a path from u to v 
+    suppose component one has v1, v2... vn 
+    component two has m1, m2... mn 
+    if any vertex in component one v is connected to any vertex in component two m, 
+    any vertex in component 2 is reachable from v since they're reachable from m and v is connected to m
+    thus, we can make an undirected graph out of it 
+
+
+It does not hold true for directed graph because the added edge is also directed, 
+it guarenteed u can reach any vertex in in component 2 
+but it doesn't guarentee that a vertex in component 2 can reach any vertex in component 1
+

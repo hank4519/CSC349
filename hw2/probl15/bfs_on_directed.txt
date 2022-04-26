@@ -1,0 +1,21 @@
+BFS(G, v) 
+
+Input: A directed graph G = (V,E), and a vertex v 
+Output: for all vertices, dist(X) is set to be the distance from V to X  
+
+for all X in V do 
+    dist(X) = infinity 
+dist(v) = 0 
+Q = [v] (a queue containing v) 
+while Q is not empty do 
+    x = dequeue(Q) 
+    for all outgoing neighbors of v, u do 
+        if dist(u) == infinity do 
+            dist(u) = dist(v) + 1 
+            enqueue(u) 
+
+
+Algorithm Runtime: 
+O(n + m)
+where n is the number of vertices 
+and m is the number of edges 

@@ -1,0 +1,14 @@
+Give an example of a strongly connected directed graph G = (V, E) such that, for every v ∈ V ,
+removing v from G leaves a directed graph that is not strongly connected.
+
+Suppose a strongly connected graph with vertices v1, v2, ... vn
+It is strongly connected so each vertex is reachable from any other vertex 
+And this is only possible if this component is composed of several small cycles or a big cycle 
+
+Either way, if we remove any element from the graph, let's say a small cycle a1 -> a2 -> a3 -> a1
+This cycle will be disconnected, and it will be impossible for vertex in this cycle to reach other vertices
+in the graph 
+
+We can do proof by contradiction on this 
+
+Thus, if v is removed from G, it leaves a directed graph that is not strongly connected
