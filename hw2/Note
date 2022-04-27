@@ -1,0 +1,79 @@
+Explore 
+
+Input: A graph G and a vertex v 
+output: vertices with discovered label set to True and vertices reachable from v 
+
+discovered(v) = True 
+for all neighbors of v, u do 
+  if discovered(u) = False 
+    explore(G, u) 
+    
+    
+    
+    
+Pre/Post, Explore(G, v) 
+
+Input: A graph G and a vertex v  
+Output: vertices labeled discovered are vertices reachable from v 
+
+discovered(v) = True 
+previsit(v) 
+for all neighbors of v, u do 
+  if discovered(u) = False 
+    explore(G, u) 
+postvisit(v) 
+
+
+
+Explore for directed graph, Explore(G, v) 
+
+Input: A directed graph G and a vertex v 
+Output: Vertices labeled "discovered" are vertices reachable from v 
+
+discovered(v) = True 
+for all outgoing neighbors of v, u do 
+  if discovered(u) = False then 
+    Explore(Graph, u) 
+    
+    
+
+BFS(G,A) 
+
+Input: an undirected graph, G = (V,E), and a vertex A 
+Output: for all vertices, dist(X) is set to be the distance from A to X 
+
+for all X in V do: 
+  dist(X) = inf
+  
+dist(A) = 0 
+Q = [A] (a queue containg A) 
+while Q is not empty do
+  x = dequeue(Q) 
+  for all edges (x, y) in E do
+    if dist(y) == inf then 
+       enqueue(Q, y) 
+       dist(y) = dist(x) + 1 
+
+
+
+Dijkstra(G, v) 
+
+Input: A graph G, G = (V,E), where each edge has a length le or a weight attached to it, and a vertex v 
+Output: For all vertices, reachable from v, dist(u) is set to be the distance from v to u 
+
+for all u in V do  
+  dist(u) = inf 
+  prev(u) = null 
+
+dist(v) = 0
+H = makequeue(V) 
+while H is not empty do
+  x = deleteMin(H) 
+  for all edges (x, y) in E do 
+    if dist(y) > dist(x) + l(x, y) do 
+      dist(y) = dist(x) + l(x, y) 
+      prev(y) = x 
+      decreaseKey(H, y) 
+      
+          
+      
