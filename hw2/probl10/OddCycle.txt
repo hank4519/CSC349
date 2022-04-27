@@ -1,3 +1,51 @@
+Transpose algorithm: 
+
+Input: A strongly connected directed graph, and a starting vertex v 
+Output: an odd length cycle, or null if no such cycle 
+
+find_odd_cycle(G, v) 
+    stack = makeStack()
+    dfs_with_stack(G, v, stack) 
+    G = transpose(G) (change edges directions) 
+    componenets = list() 
+    find_Scc(G, v, stack, components) 
+    for all scc in components: 
+        count_edges(scc) 
+        if count % 2 != 0 then 
+            return scc 
+     return null 
+    
+
+find_Scc(G, v, stack, components) 
+    temp = list() 
+    while stack is not empty do 
+        x = pop stack 
+        if discovered (x) == True then
+            continue 
+        discovered(x) = True 
+        temp = dfs(Graph, x, discovered) 
+        components.add(temp)  (add temp to components) 
+        temp.clear()
+        
+
+dfs_with_stack(G, v, stack)    
+    dicovered(v) = true 
+    previsit(v) 
+    for all outgoing neighbors of v, u do
+        if discovered(u) = False 
+            dfs_with_stack(G, u, stack) 
+    postvisit(v) 
+    push v to stack
+
+
+
+dfs(Graph, start, discovered) 
+    // Similar to our class example
+
+
+
+
+
 Input: A strongly connected directed graph, and a starting vertex v 
 Output: an odd length cycle, or null if no such cycle 
 
