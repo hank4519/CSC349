@@ -5,3 +5,16 @@ steps:
 cat → hat → hut
 
 
+BFS(curr, target)
+  Q = curr (a Queue containing current word) 
+  position = 0
+  while Q is not empty do 
+    x = dequeue(Q) 
+    if x == target 
+      return true
+    if position < length of x then 
+        for 'a' through 'z': 
+           if replace x[position] results in a valid word
+              and x[position] = target[position] 
+                Q = enqueue(new word) 
+   return false 
