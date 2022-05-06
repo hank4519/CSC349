@@ -9,3 +9,31 @@
 
 -> our answer: 4(2)
 
+
+find_sequence (Node, path) 
+	visited (Node) = true 
+	if node.four = 2 
+		Return true
+	For all elements in Node 
+		for all element in Node
+			If not visited and find_sequence(pour first into second) 
+				or not visited find_sequence(pour first into third) is true 
+				path.append (node) 
+			if not visited and find_sequence(pour second into first)
+ Or not visited and  pour(s to t)  is true 
+				path.append ( node) 
+			if not visited and find_seqiemce(pour third to first) 
+Or not  visited and  pour(pour t into s) is true
+				path.append ( node) 
+	Return false 
+
+
+Proof: 
+	Find_sequence is a modification based on the DFS algorithm. And all we need to prove is all possible node comibnations is reached and considered for pouring water. 
+
+	And through the recursive calls, all possible pouring options is considered, and as marked as visited in the next call. And if our base condition is met, the program backtraced itself and append the path of the pouring sequence.
+
+	And if all possible nodes of state are visited and our base condition is not met, and it eventually returns false and our path list is unfilled. 
+	
+
+

@@ -1,3 +1,47 @@
+6. Contain cycles 
+	Input: undirected graph G, and an edge e
+	Output: true if e is in a cycle and false otherwise 
+	
+	contains_cycle(G, v, e ) 
+		visited (v) = true 
+		For all neighbors of v, u do: 
+			If visited(u) = false 
+				contain_cycle (G,u, e) 
+			Else if visited(u)  = true 
+				If check_path(u, v, e) is true
+Return true 
+Return false 
+	
+	check_path (start, end, e) 
+		Path = list() 
+		Check_path_helper (start, end, path)	
+		Path = reverse(Path) 
+		If e is in path	
+			Return true 
+		Else 		
+			Return false 
+	
+	Check_path_hekoer (start, end , path) 
+		If start == end 
+			path.append (end) 
+			Return true 
+		discovered (start) = true
+		For all neighbors of start, next : 
+			If check_path(next, end, e) is true 
+				path.append(start) 
+
+
+Proof: The first part contains_cycle is modified through the DFS algorithm, and if a neighboring node has already been visited, it indicates that there exists a path. No matter if it’s a back edge, forward edge or cross edge 
+
+All we’d show is that check_path compared does take in the start and end points of a cycle and correctly identifies the cycle. The only way we are appending a node to the path is that the start and end of the cycle is equal and true is returned up the stack call. Thus, we guaranteed that all other irrelevant neighbores are not in the path. Then we just have to check if the given edge e is in the path we traversed and return true or false accordinrgly. Thus, this DFS works. 
+
+
+
+
+BFS For this: 
+
+
+
 Input: undirected Graph, and an edge e = (u, v) 
 Output: true if G has a cycle containing e, false otherwise 
 

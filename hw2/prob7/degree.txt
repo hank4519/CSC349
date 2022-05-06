@@ -1,3 +1,16 @@
+To Prove: summation of degree (u), where u belongs to graph G, is equal to 2|E| 
+
+Proof: 
+    let E be the number of edges in grpah G 
+    each edge connects two vertices, which generates 1 degree for each vertex
+    Thus, one edge gives exactly 2 degrees in an undirected graph, nothing more nothing less
+    Thus, summation of degrees = 2|E| 
+
+Since the sum of the degrees is even and the sum of the degrees of vertices with even degree is even, the sum of the degrees of vertices with odd degree must be even. If the sum of the degrees of vertices with odd degree is even, there must be an even number of those vertices.
+
+
+
+
 
 Prove: summation of degree(u) is 2|E|
 
