@@ -1,0 +1,7 @@
+9. Given an unlimited supply of coins of denominations x1,x2,...,xn, we wish to make change for a value
+v; that is, we wish to find a set of coins whose total value is v. This might not be possible: for instance,
+if the denominations are 5 and 10 then we can make change for 15 but not for 12. Give a dynamic
+programming algorithm for the following problem: You are given x1,...,xn; v. You must answer the
+following question: Is it possible to make change for v using coins of denominations x1,...,xn?
+
+

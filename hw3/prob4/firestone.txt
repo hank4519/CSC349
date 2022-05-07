@@ -1,0 +1,54 @@
+4. Firestones is considering opening a series of restaurants along Highway 1. The n possible locations are
+along the highway, and the distances of these locations from the downtown San Luis Obispo are, in
+miles and in increasing order, m1,m2,...,mn. The constraints are:
+• At each location, Firestones may open at most one restaurant. The expected profit from opening
+a restaurant at location i is pi, where pi > 0 and i = 1,2,...,n.
+• Any two restaurants must be at least k miles apart, where k is a positive integer.
+Give a dynamic programming algorithm to compute the maximum expected total profit subject to the
+given constraint s.
+
+
+Definition: Let F[i] = the maximum profit of opening franchises of Firestones drawing from location 0 through
+            i including i under the condition that only one restaurant is allowed at each location i and two 
+            restaurants have to be k miles apart from each other 
+
+Base Case: F[0] = 0 
+
+Solution: F[n] 
+
+Formula: F[n] = Max (P[i] + F[c]), where 0 <= i <= n, 
+                                   and c is the last location that's at least k miles away from i 
+
+
+
+
+Example: 
+
+let's say k = 20
+m1, m2, m3, m4 = 10, 20, 30, 40 respectively
+p1, p2, p3, p4 = 5, 7, 3, 2 
+
+m:      0   10  20  30  40 
+p:      0   5   7   3   2 
+F[i]:   0   5   7   8   9
+Max Profit: 9 
+
+
+Another example: 
+k = 20 
+m = 10, 12, 13, 14, 15, 16, 30, 33 
+p = 50, 1,  2,   3,  4,  5, 60, 78 
+F:  50, 1,  2,   3,  4,  5, 110, 80
+Max Profit: 110 
+
+Logistics: 
+ 
+For each F[i], we look for the last location c that is at least k miles away
+F[i] = p[i] + F[c] 
+
+If such location c does not exists
+F[i] = p[i]
+
+
+
+

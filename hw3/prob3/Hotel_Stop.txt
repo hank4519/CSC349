@@ -1,0 +1,37 @@
+3. You are going on a long trip. You start on the road at mile post 0. Along the way there are n hotels,
+at mile posts a1 < a2 < ···< an, where each ai is measured from the starting point. The only places
+you are allowed to stop are at these hotels, but you can choose which of the hotels you stop at. You
+must stop at the final hotel (at distance an), which is your destination. You would ideally like to travel
+300 miles a day, but this may not be possible (depending on the spacing of the hotels). If you travel x
+miles during a day, the penalty for that day is (300 −x)^2. You want to plan your trip so as to minimize
+the total penalty-that is, the sum, over all travel days, of the daily penalties.
+Give a dynamic programming algorithm to determine the penalty for the optimal sequence of hotels
+at which to stop.
+
+
+
+Definition: Let HS[i] be the minimum penalty in which to stop 
+    on a road drawing from hotel 1 to hotel i including i
+
+Base Case: HS[0] = 0 
+
+Solution: HS[n] 
+
+Formula: HS[i] = min ( HS[k] + (300 - (a[i] - a[k]))^2 ), where 0 <=k < i
+
+
+
+
+
+Example: 
+
+a[0] to a[i] = 50, 310, 410, 560 
+
+HS[i]: 50       310                 410                         560 -> HS[n]
+       250^2    250^2 + 40^2        250^2 + 40^2+200^2          250^2 + 40^2 + 200^2 + 150^2
+       N/A      10^2                10^2 + 200^2                10^2 + 200^2 + 150^2
+       N/A      N/A                 110^2                       110^2 + 150^2
+                                    N/A                         260^2 
+
+Min:   250^2    10^2                110^2                       110^2 + 150^2
+
