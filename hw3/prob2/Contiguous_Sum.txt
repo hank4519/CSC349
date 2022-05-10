@@ -7,23 +7,33 @@ length zero has sum zero). For the preceding example, the answer would be 10,−
 of 55.
 
 
+Definition: 
+CS[i] = The sum of the contiguous subset of max sum from a1 -> ai including ai
+
+Base Case(s): 
+CS[0] = 0, CS[1] = a1
+
+Solution: 
+Max{ CS[i] }
+
+Formula: 
+CS[i] = Max { ai , CS[i - 1] + ai }
+
+
+
 
 
 Definition: Let CS[i] be the maximum value of the contiguous subset from elements 
-            1 through i including i 
+            a1 through ai including ai
 
-Base Case: CS[0] = 0 
+Base Case: CS[0] = 0, CS[1] = a1 
 
-Solution: Max (CS[S]) 
+Solution: Max {CS[i]} 
 
-Formula: max(a[i], CS[i-1] + a[i])
+Formula: CS[i] = Max{ai, CS[i-1] + ai}
 
 
 example: 5, 15, -30, 10, -5, 40, 10 
 
-CS[i]:   5, 20, 0,   10,  5, 45, 55 
+CS[i]:   5, 20, -10, 10,  5, 45, 55 
 
-
-
-CS[i] = CS[i-1] + CS[i] if CS[i-1] + CS[i] > 0 
-         Otherwise, CS[i] = 0 

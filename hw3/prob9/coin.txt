@@ -5,3 +5,46 @@ programming algorithm for the following problem: You are given x1,...,xn; v. You
 following question: Is it possible to make change for v using coins of denominations x1,...,xn?
 
 
+
+2 Dimensional Solution
+Definition: 
+Let CM[v, i] = 1 if it is possible to make change for v using the first i denominations. 
+CM[v, i] = 0 if it is not possible.
+
+Base Case(s): 
+CM[v, 0] = 0.
+CM[0, i] = 1.
+
+Solution: 
+CM[V, n]
+
+Formula: 
+CM[v, i] = max{CM[v − xi, i], CM[v, i − 1]}
+
+
+1 Dimensional Solution
+Definition:
+C[v] == 0 if false, 1 if true to make change from value v
+
+Base Case:
+C[0] = 1
+
+Solution:
+C[V]
+
+Formula:
+C[v] = max{C[v - xi]}, for xi <= v 
+
+
+
+
+Definition: DC[v] = 1 if you can make change for v and DC[v] = 0 otherwise
+Base Case: DC[0] = 1 
+Solution: DC[v]
+Formula: DC[v] = max {DC[v - xi}, for xi <= v 
+
+
+Example: 
+V:     0 1 2 3 4 5 6 7 8 9 10 
+DC[v]: 1 0 0 1 0 0 1 1 0 1 1 
+for denominations: x1 = 3, x2 = 7 

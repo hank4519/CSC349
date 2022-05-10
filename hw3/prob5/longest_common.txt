@@ -1,0 +1,55 @@
+5. Given two strings x = x1x2 ···xn and y = y1y2 ···ym, we wish to find the length of their longest
+common substring, that is, the largest k for which there are indices i and j with xixi+1 ···xi+k−1 =
+yj yj+1 ···yj+k−1.
+
+For example, if x = dcabagc and y = cbcbcabca, then the longest 
+common substring is cab with length 3.
+
+Give a dynamic program to determine the length of the longest common 
+substring of two strings, x and y.
+
+
+
+
+Definition: 
+LC[i,j] = The size of the largest common substring between x1 to xi and y1 to yj including xi and yj 
+
+Base Case(s): 
+LC[i, 0] = 0
+LC[0, j] = 0
+
+Solution: 
+Max { LC [i , j] }
+
+Formula: 
+LC [i, j] =  
+            If xi = yj, Then  LC[ i - 1, j - 1 ] + 1
+	        Else   0
+
+
+
+
+
+
+strings: 
+x = x1, x2, ... , xn
+y = y1, y2, ... , ym 
+
+Definition: LC[i, j] = the levenshtein distance for string x: x1,x2...xn and 
+            string y: y1y2...yn. d(i, j) = 1 if xi = yi; otherwise, d(i, j) = 0 
+Base Case: LC[i, 0] = 0 
+           LC[0, j] = 0 
+Solution: LC[n, m] 
+Formula: LC[i, j] =   Max{ LC[i, j-1], 
+                      LC[i-1, j], 
+                      LC[i-1, j-1] + 1, if x[i] = y[j] AND (x[i-1] == y[j-1] OR LC[i-1, j-1] = 0) }
+
+
+Example 
+
+    d   c   a    b
+
+b   0   0   0    1
+c   0   1   1    1
+a   0   1   2    2
+b   0   1   2    3

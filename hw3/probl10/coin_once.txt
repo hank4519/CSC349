@@ -1,0 +1,21 @@
+10. Consider the following variation on the change-making problem: you are given denominations x1,x2,...,xn,
+and you want to make change for a value v, but you are allowed to use each denomination at most
+once. For instance, if the denominations are 1, 5, 10, 20, then you can make change for 16 = 1 + 15
+and for 31 = 1 + 10 + 20 but not for 40 (because you can’t use 20 twice).
+You are given positive integers x1,x2,...,xn; v. Can you make change for v, using each denomination
+xi at most once?
+Show how to solve this problem in time O(nv).
+
+
+
+
+
+
+
+Definition: CM[u, i] = 1 if we can make change for u using denominations 
+            x1, x2...xi each at most once; CM[u, i] = 0 otherwise 
+Base Case: CM[0, i] = 1, CM[u, 0] = 0 
+Solution: CM[v, n] 
+Formula: CM[u, i] = Max{CM[u-xi, i-1], CM[u, i-1]}, for xi <= u  
+
+

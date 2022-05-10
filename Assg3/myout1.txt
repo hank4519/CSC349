@@ -1,3 +1,3 @@
-x: - A C G - A T 
-y: T A C G C A -
+x: -ACG-AT
+y: TACGCA-
 Score: 4

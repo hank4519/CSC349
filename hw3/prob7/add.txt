@@ -1,0 +1,57 @@
+7. Consider the following task: You are given a set of n positive integers, {a1,a2,...an}and some positive
+integer k. Give a dynamic programming algorithm to determine if there is some subset of the ai’s that
+adds up to k.
+
+Knapsack
+
+
+Definition: 
+SS[p, i] = 1 if there is some subset of ai, a2, a3, …, ai that sum to p. Otherwise, return zero. 
+
+Base Case(s): 
+SS[0,i] = 1	(true)
+SS[p,0] = 0 	(false)
+
+Solution: 
+SS[k,n]
+
+Formula: 
+SS[p,i] = Max s.t. ai <= p 
+{
+SS[p-ai, i-1]	(include i)
+SS[p, i-1]	(don’t include i)
+}
+
+
+
+
+
+Definition: SS[l, i] if there is some subset if a1,a2,a3...ai that sum to l 
+Base Case: SS[0, i] = 1 (true),
+           SS[l, 0] = 0 (false)
+Solution: SS[k, n] 
+Formula: SS[l, i] = Max{
+                        SS[l-a[i], i-1]  (include i)
+                        SS[l, i-1]       (don't include i)
+                    }
+
+Example: 
+    [2, 6, 3] target 8 
+    [2,6,3] -> 11 
+
+    [2, 6] -> 8    -> return True  -> 1  
+    [2] -> 2 
+    [6] -> 6
+
+    [6,3] -> 9 
+    [3] -> 3 
+    [6] -> 6
+
+    [2, 3] -> 5 
+    [2] -> 2 
+    [3] -> 3 
+
+
+
+    
+

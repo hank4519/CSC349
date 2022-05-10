@@ -1,0 +1,64 @@
+6. When a new gene is discovered, a standard approach to understanding its function is to look through a
+database of known genes and find close matches. The closeness of two genes is measured by the extent
+to which they are aligned. To formalize this, think of a gene as being a long string over an alphabet
+Σ = {A,C,G,T}. Consider two genes (strings) x = ATGCC and y = TACGCA. An alignment of x
+and y is a way of matching up these two strings by writing them in columns, for instance:
+- A T - G C C
+T A - C G C A
+Here the “-” indicates a “gap”. The characters of each string must appear in order, and each column
+must contain a character from at least one of the strings. The score of an alignment is specified by
+a scoring matrix δ of size (|Σ|+ 1) ×(|Σ|+ 1), where the extra row and column are to accommodate
+gaps. For instance the preceding alignment has the following score: δ(−,T) + δ(A,A) + δ(T,−) +
+δ(−,C),+δ(G,G) + δ(C,C) + δ(C,A)
+
+
+
+Definition: 
+The max scoring alignment of the two strings x1 to xi and y1 to yj given the scoring matrix S
+
+Base Case(s): 
+G[i, 0] = S(i, -)
+G[0,j] = S(-, j)
+
+Solution: 
+G[n, m]
+
+Formula: 
+		G[i,j] = Max 
+    {
+      G[i, j-1] + S(i, -)
+      G[i-1, j] + S(-, j)
+      G[i-1, j-1] + S(i,j)
+    }
+
+
+
+
+
+Definition: G[i, j] = the maximum value of the alignment between two genes' sequence i and 
+                        j using levenshtein distance
+Base Case: G[i, 0] = 0
+           G[0, j] = 0 
+Solution: G[x, y] 
+Formula: G[i, j] = Max{ 
+            G[i, j - 1] 
+            G[i - 1, j] 
+            G[i - 1, j - 1] + δ(i, j)
+        }
+
+Example: 
+    δ table: 
+        A C G T - 
+    A   4 1 2 1 0
+    C   1 4 1 2 0
+    G   2 1 4 1 0
+    T   1 2 1 4 0 
+    -   0 0 0 0 0
+
+      0 A T A G C C 
+      0 0 0 0 0 0 0 
+    T 0 1 4 4 4 4 4 
+    G 0 2 4 6 8 8 8 
+    C 0 2 4 6 8 12 12 
+    T 0 2 6 6 8 12 14
+    G 0 2 6 8 10 12 14 

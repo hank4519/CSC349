@@ -8,46 +8,59 @@ Give a dynamic programming algorithm to compute the maximum expected total profi
 given constraint s.
 
 
-Definition: Let F[i] = the maximum profit of opening franchises of Firestones drawing from location 0 through
-            i including i under the condition that only one restaurant is allowed at each location i and two 
-            restaurants have to be k miles apart from each other 
+
+Definition: 
+F[i] = The value of the max profit Firestone’s can make subject to the constraints, 
+drawing from profits p1 to pi, including pi
+
+Base Case(s): 
+F[0] = 0, F[1] = p1
+
+Solution: 
+Max { F[i] }
+
+Formula: 
+F[i] = Max { F[j] + pi }  s.t. mj <= mi - k
+
+
+
+
+
+
+
+Definition: Let F[i] = the maximum profit achivable from opening franchises of Firestones
+            drawing from location 0 through i including i under the condition that only one 
+            restaurant is allowed at each location i and two restaurants have to be k miles 
+            apart from each other.
 
 Base Case: F[0] = 0 
 
 Solution: F[n] 
 
-Formula: F[n] = Max (P[i] + F[c]), where 0 <= i <= n, 
-                                   and c is the last location that's at least k miles away from i 
-
+Formula: Max {pi + F[c]}
+            0 < i <= n, 
+            c are previous restaurants that were at least k miles apart: m[i] - m[c] >= k
 
 
 
 Example: 
 
 let's say k = 20
-m1, m2, m3, m4 = 10, 20, 30, 40 respectively
-p1, p2, p3, p4 = 5, 7, 3, 2 
+m1, m2, m3, m4 = 10, 20, 30, 40, 50, 60, 70 respectively
+p1, p2, p3, p4 = 8,  7,  3,  2,  4,  10, 1
 
-m:      0   10  20  30  40 
-p:      0   5   7   3   2 
-F[i]:   0   5   7   8   9
-Max Profit: 9 
+m:         10  20  30  40   50  60  70
+p:         8   7   3   2   4    10  1
+F[i]:      8   7   11  9   15   21  16
+Max Profit: 21
 
 
 Another example: 
 k = 20 
 m = 10, 12, 13, 14, 15, 16, 30, 33 
 p = 50, 1,  2,   3,  4,  5, 60, 78 
-F:  50, 1,  2,   3,  4,  5, 110, 80
-Max Profit: 110 
-
-Logistics: 
- 
-For each F[i], we look for the last location c that is at least k miles away
-F[i] = p[i] + F[c] 
-
-If such location c does not exists
-F[i] = p[i]
+F:  50, 1,  2,   3,  4,  5, 110, 128
+Max Profit: 128
 
 
 

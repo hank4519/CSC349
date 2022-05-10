@@ -1,0 +1,49 @@
+8. You are given a rectangular piece of cloth with dimensions X × Y , where X and Y are positive
+integers, and a list of n products that can be made using the cloth. For each product i ∈ [1,...,n]
+you know that a rectangle of cloth of dimensions ai ×bi is needed and that the final selling price of
+the product is ci. Assume the ai,bi, and ci are all positive integers. You have a machine that can
+cut any rectangular piece of cloth into two pieces either horizontally or vertically. Design a dynamic
+programming algorithm that determines the best return on the X × Y piece of cloth, that is, a strategy
+for cutting the cloth so that the products made from the resulting pieces give the maximum sum of
+selling prices. You are free to make as many copies of a given product as you wish, or none if desired.
+
+
+Definition: 
+Cloth[x,y] = the value of the maximum value subset of items that can fit onto 
+a cloth of dimensions x * y.
+
+Base Case(s): 
+Cloth[0,y] = 0 
+Cloth[x,0] = 0
+
+Solution: Cloth[X, Y]   (the full dimension of the cloth)
+
+Formula: 
+
+Cloth[x,y] = Max s.t. ai <= x, bi <= y, all values of k such that 0<=k<=y, 
+                                        and all values of l such that 0<=l<=x
+{
+Ci + Cloth[x, y-bi] + Cloth[x-ai, bi] 	(horizontal cut first)
+Ci + Cloth[x-ai, y] + Cloth[ai, y-bi] 	(vertical cut first)
+Cloth[x, k] + Cloth[x, y-k] 		(random horizontal cut at k)
+Cloth[l, y] + Cloth[x-l, y] 			(random vertical cut at l)
+}
+
+
+
+
+
+Definition: Cloth[x, y] = the value of the maximum value of items that can fit into a cloth 
+            of dimensions of i by j 
+
+Base Case: Cloth[0, y] = 0 
+           Cloth[x, 0] = 0 
+
+Solution: Cloth[X, Y]
+
+Formula: Max(ai <= x and bi <= y){
+    ci + Cloth[x, y-bi] + Cloth[x-ai, bi] : horizontal cut 
+    ci + Cloth[x-ai, y] + Cloth[ai, y-bi] : vertical cut 
+    for 0 <= k <= y: Cloth[x, k] + Cloth[x, y - k] : horizontal cut at k
+    for o <= l <= x: Cloth[l, y] + Cloth[x - l, y] : vertical cut at l 
+} 

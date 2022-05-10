@@ -10,14 +10,29 @@ at which to stop.
 
 
 
-Definition: Let HS[i] be the minimum penalty in which to stop 
-    on a road drawing from hotel 1 to hotel i including i
+Definition:
+HS[i] = The minimum penalty for the sequence of hotels from a1 to ai including ai
 
-Base Case: HS[0] = 0 
+Base Case(s): 
+HS[1] = (300 - a1)2
+
+Solution: 
+HS[n]
+
+Formula: 
+HS[i] = Min { HS[j] + (ai - aj - 300)2 }
+
+
+
+
+Definition: Let HS[i] be the minimum penalty in which hotels to stop 
+    on a road drawing from hotel at a1 to hotel at ai including ai
+
+Base Case: HS[0] = 0, a[0] = 0 
 
 Solution: HS[n] 
 
-Formula: HS[i] = min ( HS[k] + (300 - (a[i] - a[k]))^2 ), where 0 <=k < i
+Formula: HS[i] = Min{HS[k] + [300 - (a[i] - a[k])]^2 }, where 0 <=k < i
 
 
 
