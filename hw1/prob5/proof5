@@ -7,19 +7,25 @@ if max - min == 2 then
   heavy = scale(A[min], A[max]) 
   if heavy == 0, then 
       return A[min + 1] 
+  else if heavy > 0 
+    return A[min] 
   else 
-       return heavy 
+    return A[max] 
+    
 else 
-  split A into 3 sets 
-  l1 = A[min, n/3] 
-  l2 = A[n/3, 2n/3] 
-  l3 = A[2n/3, max] 
+  //split A into 3 sets 
+  l1 = A[min, L/3] 
+  l2 = A[L/3, 2L/3] 
+  l3 = A[2L/3, max] 
   heavy = scale (l1, l2) 
   if(heavy=0) 
-    return find_marble(l3, ...) 
+    return find_marble(l3, 2L/3, max) 
   else 
-    if (heavy > 1): return (l1, min, min + length)
-    else: return (l2, ...) 
+    if (heavy > 1): return (l1, min, L/3)
+    else: return (l2, L/3, 2L/3) 
+
+
+T(n) = T(n/3) + O(1)
     
     
 
@@ -37,4 +43,3 @@ Inductive Step: Suppose a list containing a total size of 3 to the power of k + 
 Conclusion: by the principle of mathematical induction, this algorithm works for list with one and only one heavy marble and a list size of power 3. 
 
 
-T(n) = T(n/3) + O(1)
