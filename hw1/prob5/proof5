@@ -18,7 +18,7 @@ else
   if(heavy=0) 
     return find_marble(l3, ...) 
   else 
-    if (heavy == 1): return (l1, min, min + length)
+    if (heavy > 1): return (l1, min, min + length)
     else: return (l2, ...) 
     
     
