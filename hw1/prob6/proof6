@@ -34,4 +34,4 @@ Conclusion: returns first occurrence .
 and the same goes for last occurrence. 
 number of occurrence = last - first + 1 
 
-Reuccrrence Relation: T(n) = T(n/2) + O(1) 
+Reuccrrence Relation: T(n) = 2T(n/2) + O(1) 
