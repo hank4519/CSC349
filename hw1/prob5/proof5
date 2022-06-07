@@ -37,4 +37,4 @@ Inductive Step: Suppose a list containing a total size of 3 to the power of k + 
 Conclusion: by the principle of mathematical induction, this algorithm works for list with one and only one heavy marble and a list size of power 3. 
 
 
-T(n) = 1/3T(n) + O(1)
+T(n) = T(n/3) + O(1)
