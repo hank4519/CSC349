@@ -3,7 +3,7 @@ Output: the index of the heavy marble
 
 find_marble(A, min, max) 
 
-if max - min == 3 then 
+if max - min == 2 then 
   heavy = scale(A[min], A[max]) 
   if heavy == 0, then 
       return A[min + 1] 
