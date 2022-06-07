@@ -18,10 +18,10 @@ else
   l2 = A[L/3, 2L/3] 
   l3 = A[2L/3, max] 
   heavy = scale (l1, l2) 
-  if(heavy=0) 
+  if(heavy==0) 
     return find_marble(l3, 2L/3, max) 
   else 
-    if (heavy > 1): return (l1, min, L/3)
+    if (heavy > 0): return (l1, min, L/3)
     else: return (l2, L/3, 2L/3) 
 
 
