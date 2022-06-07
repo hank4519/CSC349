@@ -29,6 +29,6 @@ case 3: find value where A[mid] = mid, and mid + 1 is correctly returned (starti
 
 Conclusion: 
 
-T(n) = 1/2T(n) + O(1)
+T(n) = T(n/2) + O(1)
 
 
