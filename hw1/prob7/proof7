@@ -20,6 +20,8 @@ Merge(lst1, lst2):
       concate
   else 
       return both increment the index 
+ 
+ T(n) = 2T(n/2) + o(n)
 
 Lemma: A list with potentially duplicated numbers, MergeSort returns a list removed all the duplicated numhers 
 Proof: proceed with induction with the size of the interval under consideration 
