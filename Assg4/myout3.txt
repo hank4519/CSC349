@@ -1,0 +1,3 @@
+log-Approximation: 0 2 4 6 8
+2-Approximation: 6 7 2 3 4 5 8 9 0 1
+Exact Solution: 0 2 4 6 8

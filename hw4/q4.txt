@@ -1,0 +1,2 @@
+4. Suppose that Vertex Cover is NP-Complete (it is), use that fact to show that Independent Set is
+NP-Complete.

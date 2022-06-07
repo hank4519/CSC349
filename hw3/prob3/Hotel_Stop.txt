@@ -11,16 +11,17 @@ at which to stop.
 
 
 Definition:
-HS[i] = The minimum penalty for the sequence of hotels from a1 to ai including ai
+HS[i] = The minimum penalty for the sequence of hotels to stop from a1 to ai including ai
 
 Base Case(s): 
-HS[1] = (300 - a1)2
+HS[0] = (300 - 0)^2
+HS[1] = (300 - a1)^2
 
 Solution: 
 HS[n]
 
 Formula: 
-HS[i] = Min { HS[j] + (ai - aj - 300)2 }
+HS[i] = Min { HS[j] + (ai - aj - 300)2 }, where 1<= j < i 
 
 
 

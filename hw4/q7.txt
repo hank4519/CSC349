@@ -1,0 +1,5 @@
+7. In the Subgraph Isomorphism problem we are given as input two undirected graphs G and H, we
+wish to determine whether G is a subgraph of H (that is, whether by deleting certain vertices and
+edges of H we obtain a graph that is, up to renaming of vertices, identical to G), and if so, return the
+corresponding mapping of V (G) into V (H).
+Prove that Subgraph Isomorphism is NP-complete. (Hint: Use Clique)

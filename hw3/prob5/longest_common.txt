@@ -19,11 +19,10 @@ LC[i, 0] = 0
 LC[0, j] = 0
 
 Solution: 
-Max { LC [i , j] }
+Max { LC [n , m] }
 
 Formula: 
-LC [i, j] =  
-            If xi = yj, Then  LC[ i - 1, j - 1 ] + 1
+LC [i, j] = If xi = yj, Then  LC[ i - 1, j - 1 ] + 1
 	        Else   0
 
 

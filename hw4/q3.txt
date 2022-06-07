@@ -1,0 +1,3 @@
+3. Consider the Clique problem restricted to graphs in which every vertex has degree at most 3. Prove
+that this problem is in NP.
+

@@ -1,0 +1,39 @@
+1. State the following optimization problems as decision problems:
+• Vertex Cover
+• Independent Set
+• Knapsack
+• Longest Increasing Subsequence
+• Coin Row 
+
+Vertex Cover 
+Input: A graph G = (V, E) and a threshold value x 
+Goal: Find a vertex cover with size less than or eqaul to x 
+
+
+Independent Set 
+Input: A graph G = (V, E), and a value g
+Goal: Find an Independent Set with size greater than or eqaul to g 
+
+
+Knapsack: 
+Input: A list of N items, each with weight w1, w2...wn with values v1, v2...vn respectively 
+       a maximum weight W, and a threshold V   
+Goal: Find a subset of items such that the summation of the individual weight in the subset 
+        is less than or equal to W, and the summation of the individual value is greater than or 
+        eqaul to V 
+
+
+Longest Increasing Subsequence: 
+Input: A list of numbers a1, a1...an, and a threshold value g
+Goal: Find an increasing subsequence of length greater than or equal to g 
+
+Coin Row: 
+Input: A list of n coins, c1, c2...cn whose values are some positive integers v1, v2...vn 
+       and a value x 
+Goal: Find a subset of coins with total value greater than or eqaul to x subject to the 
+      constraint that no two consecutive coins can be selected in the original input list 
+
+
+       
+
+

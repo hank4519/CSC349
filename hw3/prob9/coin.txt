@@ -41,7 +41,7 @@ C[v] = max{C[v - xi]}, for xi <= v
 Definition: DC[v] = 1 if you can make change for v and DC[v] = 0 otherwise
 Base Case: DC[0] = 1 
 Solution: DC[v]
-Formula: DC[v] = max {DC[v - xi}, for xi <= v 
+Formula: DC[v] = Max {DC[v - xi]}, for xi <= v 
 
 
 Example: 

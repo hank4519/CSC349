@@ -1,0 +1,9 @@
+2. Fill in the reduction diagram explicitly for the following reductions. You should include what a specific
+instance and solution looks like for each problem in the reduction.
+• Vertex Cover → Independent Set
+• Clique → Independent Set
+• 3SAT → Stingy SAT (see problem 6)
+• Vertex Cover → Set Cover (see problem 8)
+• Clique → Subgraph Isomorphism (see problem 7)
+
+

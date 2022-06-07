@@ -1,0 +1,4 @@
+8. In the Set Cover problem, we are given a set (“universe”) of elements: {1, 2, . . . m} and a set S of n
+sets whose union is the universe. The goal is to find a subset of S of size y whose union equals the
+universe. Note that this is the decision version of the Set Cover problem stated above.
+Prove that Set Cover is NP-complete. (Hint: Use Vertex Cover)
