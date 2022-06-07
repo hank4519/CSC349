@@ -12,8 +12,8 @@ if max - min == 3 then
 else 
   split A into 3 sets 
   l1 = A[min, n/3] 
-  l2 = A[n/3, n/2] 
-  l3 = A[n/2, max] 
+  l2 = A[n/3, 2n/3] 
+  l3 = A[2n/3, max] 
   heavy = scale (l1, l2) 
   if(heavy=0) 
     return find_marble(l3, ...) 
